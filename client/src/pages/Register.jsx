@@ -183,6 +183,8 @@ export default function Register() {
     setLoading(true)
 
     try {
+        console.log('Course entered:', form.course)
+console.log('Email entered:', form.email)
       const { data, error: signupError } =
         await supabase.auth.signUp({
           email: form.email.trim(),
