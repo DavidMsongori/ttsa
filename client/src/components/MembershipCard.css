@@ -1,0 +1,238 @@
+
+.membership-page {
+  width: 100%;
+  min-width: 0;
+}
+
+.ttsa-membership-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 680px;
+  min-height: 320px;
+  margin: 24px 0 18px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid #c7b478;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    #103624 0%,
+    #1c593b 65%,
+    #28704b 100%
+  );
+  box-shadow: 0 12px 30px #10362420;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.ttsa-membership-card *,
+.ttsa-membership-card *::before,
+.ttsa-membership-card *::after {
+  box-sizing: border-box;
+}
+
+.ttsa-card-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ffffff35;
+}
+
+.ttsa-card-logo {
+  width: 48px;
+  height: 48px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.ttsa-card-organisation {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.ttsa-card-organisation strong {
+  color: #e4cc91;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.ttsa-card-organisation span {
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.5px;
+}
+
+.ttsa-card-organisation small {
+  color: #d2dfd5;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.ttsa-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex: 1;
+}
+
+.ttsa-card-information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.ttsa-card-label {
+  color: #e4cc91;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.ttsa-card-information h2 {
+  margin: 0 0 3px;
+  color: #fff;
+  font-size: clamp(17px, 2.5vw, 24px);
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-card-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ttsa-card-field span {
+  color: #c4d8ca;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.ttsa-card-field strong {
+  color: #fff;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-card-portrait-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.ttsa-card-portrait,
+.ttsa-card-portrait-placeholder {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 108px;
+  border: 2px solid #e4cc91;
+  border-radius: 8px;
+  background: #e4f2e8;
+  color: #17613e;
+  object-fit: cover;
+}
+
+.ttsa-card-portrait-placeholder {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.ttsa-card-member-tag {
+  color: #e4cc91;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.ttsa-card-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #ffffff35;
+  color: #d2dfd5;
+  font-size: 8px;
+  letter-spacing: 0.6px;
+}
+
+.ttsa-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.ttsa-card-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.ttsa-card-error {
+  margin: 0;
+  color: #b42318;
+  font-size: 14px;
+}
+
+.ttsa-card-success {
+  margin: 0;
+  color: #187346;
+  font-size: 14px;
+}
+
+.ttsa-card-help {
+  max-width: 680px;
+}
+
+.ttsa-card-help p {
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+.membership-card-message {
+  padding: 20px;
+  border-radius: 10px;
+  background: #f4f7f5;
+  color: #34483b;
+}
+
+@media (max-width: 480px) {
+  .ttsa-membership-card {
+    gap: 15px;
+    padding: 16px;
+  }
+
+  .ttsa-card-content {
+    gap: 10px;
+  }
+
+  .ttsa-card-portrait,
+  .ttsa-card-portrait-placeholder {
+    width: 65px;
+    height: 82px;
+  }
+
+  .ttsa-card-field strong {
+    font-size: 10px;
+  }
+
+  .ttsa-card-organisation span {
+    font-size: 8px;
+  }
+}

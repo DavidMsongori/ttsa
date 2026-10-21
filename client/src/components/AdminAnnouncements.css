@@ -1,0 +1,339 @@
+
+.admin-announcements {
+  width: 100%;
+  min-width: 0;
+  color: #173528;
+}
+
+.admin-announcements-heading,
+.admin-announcement-form-heading,
+.admin-announcement-list-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.admin-announcements-heading {
+  margin-bottom: 24px;
+}
+
+.admin-announcements-heading h1 {
+  margin: 5px 0 9px;
+  font-size: clamp(24px, 3vw, 32px);
+  line-height: 1.25;
+}
+
+.admin-announcements-refresh,
+.admin-announcement-primary,
+.admin-announcement-secondary,
+.admin-announcement-cancel {
+  border-radius: 9px;
+  padding: 11px 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.admin-announcements-refresh,
+.admin-announcement-secondary,
+.admin-announcement-cancel {
+  border: 1px solid #d8e4dc;
+  background: #fff;
+  color: #17613e;
+}
+
+.admin-announcement-primary {
+  border: 1px solid #17613e;
+  background: #17613e;
+  color: #fff;
+}
+
+.admin-announcement-primary:disabled,
+.admin-announcements-refresh:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.admin-announcements-alert {
+  margin: 0 0 18px;
+  padding: 13px 16px;
+  border-radius: 9px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.admin-announcements-alert.error {
+  border: 1px solid #f0c9c6;
+  background: #fff4f3;
+  color: #a52822;
+}
+
+.admin-announcements-alert.success {
+  border: 1px solid #c6e5d0;
+  background: #eff9f1;
+  color: #17613e;
+}
+
+.admin-announcement-form-panel,
+.admin-announcement-list-panel {
+  margin-bottom: 24px;
+  padding: 24px;
+  border: 1px solid #e1eae4;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 18px #17352807;
+}
+
+.admin-announcement-form-heading {
+  margin-bottom: 22px;
+}
+
+.admin-announcement-form-heading h2,
+.admin-announcement-list-heading h2 {
+  margin: 0 0 7px;
+  font-size: 20px;
+}
+
+.admin-announcement-form-heading p,
+.admin-announcement-list-heading p {
+  margin: 0;
+  color: #748278;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.admin-announcement-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-announcement-form > label:not(.admin-announcement-publish-option) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #334b3c;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-announcement-form input[type="text"],
+.admin-announcement-form select,
+.admin-announcement-form textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #d8e3db;
+  border-radius: 9px;
+  padding: 12px 13px;
+  outline: none;
+  background: #fff;
+  color: #173528;
+  font: inherit;
+  font-weight: 400;
+}
+
+.admin-announcement-form input[type="text"]:focus,
+.admin-announcement-form select:focus,
+.admin-announcement-form textarea:focus {
+  border-color: #39845b;
+  box-shadow: 0 0 0 3px #39845b19;
+}
+
+.admin-announcement-form textarea {
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.admin-announcement-publish-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 14px;
+  border: 1px solid #e1eae4;
+  border-radius: 10px;
+  background: #f8fbf9;
+  cursor: pointer;
+}
+
+.admin-announcement-publish-option input {
+  width: 17px;
+  height: 17px;
+  margin-top: 3px;
+  accent-color: #17613e;
+}
+
+.admin-announcement-publish-option span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-announcement-publish-option strong {
+  color: #173528;
+  font-size: 13px;
+}
+
+.admin-announcement-publish-option small {
+  color: #748278;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.admin-announcement-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-announcement-list-heading {
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.admin-announcement-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.admin-announcement-filters button {
+  border: 1px solid #dce6df;
+  border-radius: 20px;
+  padding: 8px 12px;
+  background: #fff;
+  color: #526358;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.admin-announcement-filters button.active {
+  border-color: #17613e;
+  background: #17613e;
+  color: #fff;
+}
+
+.admin-announcement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-announcement-item {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #e3ebe5;
+  border-radius: 12px;
+}
+
+.admin-announcement-item-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+
+.admin-announcement-category,
+.admin-announcement-status {
+  display: inline-flex;
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.admin-announcement-category {
+  background: #edf4ef;
+  color: #17613e;
+}
+
+.admin-announcement-status.published {
+  background: #e6f6ea;
+  color: #17613e;
+}
+
+.admin-announcement-status.draft {
+  background: #fff3d8;
+  color: #8a5b00;
+}
+
+.admin-announcement-item h3 {
+  margin: 13px 0 8px;
+  color: #173528;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.admin-announcement-preview {
+  margin: 0 0 17px;
+  color: #66756b;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.admin-announcement-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 13px;
+  border-top: 1px solid #edf1ee;
+}
+
+.admin-announcement-item-footer > span {
+  color: #7a897f;
+  font-size: 11px;
+}
+
+.admin-announcement-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.admin-announcement-item-actions button {
+  border: 1px solid #dce6df;
+  border-radius: 7px;
+  padding: 7px 10px;
+  background: #fff;
+  color: #17613e;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.admin-announcement-item-actions button.delete {
+  border-color: #f0d1cf;
+  color: #b42318;
+}
+
+.admin-announcement-empty {
+  padding: 30px 15px;
+  color: #718176;
+  text-align: center;
+}
+
+.admin-announcement-empty h3 {
+  color: #173528;
+}
+
+@media (max-width: 760px) {
+  .admin-announcements-heading,
+  .admin-announcement-form-heading,
+  .admin-announcement-list-heading {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-announcement-form-panel,
+  .admin-announcement-list-panel {
+    padding: 17px;
+  }
+
+  .admin-announcement-item-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

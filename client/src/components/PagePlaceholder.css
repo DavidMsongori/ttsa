@@ -1,0 +1,104 @@
+
+.page-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+  padding: 80px 24px;
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgb(215 174 83 / 12%),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #f7faf7, #ffffff 65%);
+}
+
+.page-placeholder-container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-placeholder-eyebrow {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #94722b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.page-placeholder h1 {
+  margin: 0;
+  color: #0b3024;
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 850;
+  letter-spacing: -2px;
+  line-height: 1.12;
+}
+
+.page-placeholder-description {
+  max-width: 650px;
+  margin: 24px auto;
+  color: #647269;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.page-placeholder-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 12px 0 28px;
+  padding: 12px 18px;
+  border: 1px solid #e3e9e3;
+  border-radius: 30px;
+  background: #fff;
+  color: #526157;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.page-placeholder-status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #d7ae53;
+}
+
+.page-placeholder-home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: fit-content;
+  margin: 0 auto;
+  color: #124734;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.page-placeholder-home-link:hover {
+  color: #94722b;
+}
+
+@media (max-width: 600px) {
+  .page-placeholder {
+    min-height: 60vh;
+    padding: 60px 20px;
+  }
+
+  .page-placeholder h1 {
+    letter-spacing: -1px;
+  }
+
+  .page-placeholder-description {
+    font-size: 14px;
+  }
+}

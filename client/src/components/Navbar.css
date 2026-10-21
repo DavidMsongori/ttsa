@@ -1,0 +1,260 @@
+
+.public-navbar,
+.public-navbar * {
+  box-sizing: border-box;
+}
+
+.public-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e4e9e5;
+  box-shadow: 0 3px 14px rgb(11 48 36 / 4%);
+}
+
+.navbar-container {
+  width: min(100% - 48px, 1440px);
+  min-height: 82px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  color: #0b3024;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  width: 52px;
+  height: 52px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.navbar-brand-text strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.navbar-brand-text small {
+  display: block;
+  margin-top: 4px;
+  color: #738077;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+.navbar-link {
+  position: relative;
+  padding: 10px 0;
+  color: #46564b;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: #124734;
+}
+
+.navbar-link.active::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #d7ae53;
+  content: '';
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 4px;
+}
+
+.navbar-login,
+.navbar-register {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navbar-login {
+  border: 1px solid #dce5dd;
+  color: #124734;
+  background: #fff;
+}
+
+.navbar-login:hover {
+  background: #f2f7f3;
+}
+
+.navbar-register {
+  background: #124734;
+  color: #fff;
+}
+
+.navbar-register:hover {
+  background: #0b3024;
+  transform: translateY(-1px);
+}
+
+.navbar-menu-toggle {
+  display: none;
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid #dce5dd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.navbar-menu-toggle span {
+  width: 19px;
+  height: 2px;
+  border-radius: 2px;
+  background: #124734;
+}
+
+@media (max-width: 1180px) {
+  .navbar-container {
+    width: calc(100% - 36px);
+    gap: 16px;
+  }
+
+  .navbar-links {
+    gap: 14px;
+  }
+
+  .navbar-link {
+    font-size: 11px;
+  }
+
+  .navbar-brand-text small {
+    max-width: 190px;
+  }
+
+  .navbar-login,
+  .navbar-register {
+    padding: 0 11px;
+  }
+}
+
+@media (max-width: 980px) {
+  .navbar-container {
+    min-height: 74px;
+  }
+
+  .navbar-menu-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    max-height: calc(100vh - 74px);
+    overflow-y: auto;
+    padding: 12px 22px 22px;
+    border-bottom: 1px solid #e4e9e5;
+    background: #fff;
+    box-shadow: 0 12px 20px rgb(11 48 36 / 8%);
+  }
+
+  .navbar-links.is-open {
+    display: flex;
+  }
+
+  .navbar-link {
+    padding: 14px 4px;
+    border-bottom: 1px solid #f0f2f0;
+    font-size: 13px;
+  }
+
+  .navbar-link.active::after {
+    display: none;
+  }
+
+  .navbar-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+    margin: 18px 0 0;
+  }
+
+  .navbar-login,
+  .navbar-register {
+    width: 100%;
+    min-height: 45px;
+  }
+}
+
+@media (max-width: 420px) {
+  .navbar-container {
+    width: calc(100% - 28px);
+  }
+
+  .navbar-logo {
+    width: 41px;
+    height: 41px;
+    font-size: 23px;
+  }
+
+  .navbar-brand-text strong {
+    font-size: 19px;
+  }
+
+  .navbar-brand-text small {
+    max-width: 200px;
+    font-size: 9px;
+  }
+}
