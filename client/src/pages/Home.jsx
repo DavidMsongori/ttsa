@@ -205,39 +205,7 @@ export default function Home() {
               </div>
             )}
           </div>
-        </section>
-
-        {/* MEMBERSHIP CTA */}
-        <section className="ttsa-membership" id="membership">
-          <div className="ttsa-container ttsa-membership-inner">
-            <div>
-              <span className="ttsa-kicker ttsa-kicker-light">
-                YOUR COMMUNITY. YOUR FUTURE.
-              </span>
-              <h2>
-                Your voice matters.
-                <br />
-                Your journey matters.
-              </h2>
-              <p>
-                Join the TTSA student community, make your voice heard
-                and participate in building a stronger student association.
-              </p>
-            </div>
-
-            <div className="ttsa-membership-actions">
-              <Link
-                to="/register"
-                className="ttsa-button ttsa-button-light"
-              >
-                Become a Member <span>→</span>
-              </Link>
-              <Link to="/login" className="ttsa-membership-login">
-                Already registered? Log in
-              </Link>
-            </div>
-          </div>
-        </section>
+        </section> 
 
         {/* CONTACT */}
         <section className="ttsa-section ttsa-contact" id="contact">
