@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import Home from './pages/Home'
 import About from './pages/About'
-import Leadership from './pages/Leadership'
+import PublicLeadership from './pages/Leadership'
 import Programs from './pages/Programs'
 import News from './pages/News'
 import Contact from './pages/Contact'
@@ -21,6 +21,8 @@ import AdminDashboard from './admin/AdminDashboard'
 import Students from './admin/Students'
 import MembershipRecords from './admin/MembershipRecords'
 import AdminAnnouncements from './components/AdminAnnouncements'
+import Leadership from './admin/Leadership'
+import NewsOpportunities from './admin/NewsOpportunities'
 
 export default function App() {
   return (
@@ -30,7 +32,7 @@ export default function App() {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/leadership" element={<Leadership />} />
+          <Route path="/leadership" element={<PublicLeadership />} />
           <Route path="/programs" element={<Programs />} />
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
@@ -58,6 +60,8 @@ export default function App() {
           <Route path="students" element={<Students />} />
           <Route path="memberships" element={<MembershipRecords />} />
           <Route path="announcements" element={<AdminAnnouncements />} />
+          <Route path="leadership" element={<Leadership />} />  
+          <Route path="news-opportunities" element={<NewsOpportunities />} /> 
         </Route>
 
         <Route path="*" element={<Navigate to="/" replace />} />

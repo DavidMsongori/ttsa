@@ -1,39 +1,46 @@
 
-.admin-layout,
-.admin-layout * {
+.admin-layout.admin-layout {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #24352c;
   box-sizing: border-box;
 }
 
-.admin-layout {
-  min-height: 100vh;
-  width: 100%;
-  background: #f5f7fb;
+.admin-layout *,
+.admin-layout *::before,
+.admin-layout *::after {
+  box-sizing: border-box;
 }
 
 .admin-sidebar {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  inset: 0 auto 0 0;
   width: 250px;
+  height: 100vh;
+  min-height: 0;
   padding: 28px 18px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   background: #101b35;
   color: #fff;
   overflow-y: auto;
   z-index: 1000;
+  transition: transform 0.25s ease;
 }
 
 .admin-brand {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 42px;
   color: #fff;
   text-decoration: none;
   font-size: 21px;
   font-weight: 800;
-  margin-bottom: 42px;
 }
 
 .admin-brand small {
@@ -51,7 +58,6 @@
   flex-shrink: 0;
   object-fit: contain;
   border-radius: 8px;
-  background: transparent;
 }
 
 .admin-nav-heading {
@@ -82,11 +88,11 @@
   font-size: 13px;
   font-weight: 600;
   transition: background 0.2s ease, color 0.2s ease;
-  cursor: pointer;
 }
 
 .admin-nav-link span {
   width: 22px;
+  flex-shrink: 0;
   text-align: center;
   font-size: 18px;
 }
@@ -139,34 +145,146 @@
   cursor: wait;
 }
 
-.admin-main {
+/* Main content stays beside the sidebar on desktop */
+.admin-main-area {
   width: calc(100% - 250px);
   min-width: 0;
   min-height: 100vh;
   margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-main {
+  width: 100%;
+  min-width: 0;
+  flex: 1;
   padding: 28px;
 }
 
+/* Hidden on desktop */
+.admin-mobile-header {
+  display: none;
+}
+
+.admin-menu-toggle {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.admin-mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.admin-mobile-brand img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.admin-menu-backdrop {
+  display: none;
+}
+
 @media (max-width: 760px) {
-  .admin-sidebar {
-    width: 210px;
-    padding: 20px 12px;
+  .admin-layout.admin-layout {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
   }
 
-  .admin-main {
-    width: calc(100% - 210px);
-    margin-left: 210px;
-    padding: 18px 12px;
+  .admin-layout .admin-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(290px, 85vw);
+    height: 100vh;
+    min-height: 0;
+    padding: 24px 18px;
+    transform: translateX(-100%);
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1002;
   }
 
-  .admin-brand {
-    font-size: 18px;
-    margin-bottom: 30px;
+  .admin-layout .admin-sidebar.menu-open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
-  .admin-nav-link {
-    gap: 7px;
-    padding: 12px 8px;
-    font-size: 12px;
+  .admin-layout .admin-main-area {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    margin-left: 0;
+  }
+
+  .admin-layout .admin-mobile-header {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 62px;
+    padding: 10px 16px;
+    background: #101b35;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
+  }
+
+  .admin-layout .admin-main {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 20px 14px;
+  }
+
+  .admin-layout .admin-brand {
+    font-size: 19px;
+    margin-bottom: 35px;
+  }
+
+  .admin-layout .admin-nav-link {
+    gap: 10px;
+    padding: 13px 10px;
+    font-size: 13px;
+  }
+
+  .admin-layout .admin-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: rgb(8 15 29 / 55%);
+    z-index: 1001;
+  }
+}
+
+@media (max-width: 380px) {
+  .admin-layout .admin-main {
+    padding: 16px 10px;
+  }
+
+  .admin-layout .admin-mobile-header {
+    padding-inline: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-layout .admin-sidebar {
+    transition: none;
   }
 }

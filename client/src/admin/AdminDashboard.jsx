@@ -84,7 +84,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="admin-dashboard-content">
-      <header className="admin-topbar" id="overview">
+      <header className="admin-topbar">
         <div>
           <p className="admin-eyebrow">TTSA MANAGEMENT PORTAL</p>
           <h1>Admin Dashboard</h1>
@@ -105,21 +105,21 @@ export default function AdminDashboard() {
           <p>ADMINISTRATOR WORKSPACE</p>
           <h2>Welcome to TTSA Management</h2>
           <span>
-            Monitor membership, manage student records and publish
-            official announcements.
+            Monitor membership, manage student records and publish official
+            announcements.
           </span>
         </div>
 
-       <img
-  src="/ttsa-logo.png"
-  alt="TTSA Logo"
-  className="admin-welcome-icon"
-/>
+        <img
+          src="/ttsa-logo.png"
+          alt="TTSA Logo"
+          className="admin-welcome-icon"
+        />
       </section>
 
       {error && (
         <div className="admin-error" role="alert">
-          {error}
+          <span>{error}</span>
           <button type="button" onClick={loadDashboard}>
             Try again
           </button>
@@ -130,13 +130,15 @@ export default function AdminDashboard() {
         <article className="admin-stat-card">
           <div className="admin-stat-top">
             <span>Total registered students</span>
-            <span className="admin-stat-icon">♙</span>
+            <span className="admin-stat-icon" aria-hidden="true">
+              ♙
+            </span>
           </div>
 
           <strong>
-            {loading && totalStudents === null
+            {totalStudents === null
               ? '—'
-              : (totalStudents ?? '—').toLocaleString()}
+              : totalStudents.toLocaleString('en-KE')}
           </strong>
 
           <small>Student profiles in the database</small>
@@ -145,7 +147,9 @@ export default function AdminDashboard() {
         <article className="admin-stat-card">
           <div className="admin-stat-top">
             <span>Recent registrations</span>
-            <span className="admin-stat-icon">＋</span>
+            <span className="admin-stat-icon" aria-hidden="true">
+              +
+            </span>
           </div>
 
           <strong>{loading ? '—' : recentStudents.length}</strong>
@@ -155,7 +159,9 @@ export default function AdminDashboard() {
         <article className="admin-stat-card">
           <div className="admin-stat-top">
             <span>Portal status</span>
-            <span className="admin-stat-icon">✓</span>
+            <span className="admin-stat-icon" aria-hidden="true">
+              ✓
+            </span>
           </div>
 
           <strong className="admin-status-text">Active</strong>
@@ -198,15 +204,17 @@ export default function AdminDashboard() {
                 {recentStudents.map((student) => (
                   <tr key={student.id}>
                     <td>
-                      <strong>{student.full_name}</strong>
+                      <strong>{student.full_name || 'Unnamed student'}</strong>
                     </td>
                     <td>{formatRegistrationNumber(student)}</td>
-                    <td>{student.institution}</td>
-                    <td>{student.course}</td>
+                    <td>{student.institution || '—'}</td>
+                    <td>{student.course || '—'}</td>
                     <td>
-                      {new Date(
-                        student.created_at
-                      ).toLocaleDateString('en-KE')}
+                      {student.created_at
+                        ? new Date(student.created_at).toLocaleDateString(
+                            'en-KE'
+                          )
+                        : '—'}
                     </td>
                   </tr>
                 ))}

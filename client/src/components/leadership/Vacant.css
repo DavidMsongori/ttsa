@@ -1,0 +1,391 @@
+
+/* VACANT POSITIONS SECTION */
+
+.ttsa-vacancies-section {
+  padding: 72px 24px;
+  background: #ffffff;
+}
+
+.ttsa-vacancies-section .ttsa-leadership-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ttsa-vacancies-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.ttsa-vacancies-heading h2 {
+  margin: 12px 0;
+  color: #14233b;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+}
+
+.ttsa-vacancies-heading p {
+  max-width: 650px;
+  margin: 0;
+  color: #647084;
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+.ttsa-vacancies-section .ttsa-vacancy-total {
+  flex-shrink: 0;
+  padding: 10px 15px;
+  border: 1px solid #f0dfb6;
+  border-radius: 30px;
+  background: #fff8e8;
+  color: #865d0a;
+  font-size: 0.85rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* HORIZONTAL COMMITTEE TABS */
+
+.ttsa-vacancy-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 7px;
+  border: 1px solid #e5eaf1;
+  border-radius: 16px;
+  background: #f7f9fc;
+}
+
+.ttsa-vacancy-tab {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+  padding: 16px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: #34445b;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ttsa-vacancy-tab:hover {
+  border-color: #dce5f0;
+  background: #ffffff;
+}
+
+.ttsa-vacancy-tab.active {
+  border-color: #172b4d;
+  background: #172b4d;
+  color: #ffffff;
+  box-shadow: 0 5px 14px rgba(23, 43, 77, 0.12);
+}
+
+.ttsa-vacancy-tab:focus-visible {
+  outline: 3px solid #e7bd52;
+  outline-offset: 3px;
+}
+
+.ttsa-vacancy-tab-name {
+  font-size: 0.98rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.ttsa-vacancy-tab-count {
+  color: #78869a;
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ttsa-vacancy-tab.active .ttsa-vacancy-tab-count {
+  color: #d9e4f2;
+}
+
+/* SELECTED COMMITTEE PANEL */
+
+.ttsa-vacancy-results {
+  padding: 30px;
+  border: 1px solid #e5eaf1;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 6px 24px rgba(16, 33, 62, 0.035);
+}
+
+.ttsa-vacancy-results-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.ttsa-vacancy-overline {
+  color: #a17b20;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.ttsa-vacancy-results-heading h3 {
+  margin: 8px 0;
+  color: #172b4d;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.ttsa-vacancy-results-heading p {
+  margin: 0;
+  color: #647084;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.ttsa-vacancy-results-count {
+  flex-shrink: 0;
+  padding: 9px 13px;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  background: #f7f9fc;
+  color: #33445c;
+  font-size: 0.78rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+/* VACANCY CARDS */
+
+.ttsa-vacancy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ttsa-vacancy-card {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 18px;
+  border: 1px solid #e8edf3;
+  border-radius: 13px;
+  background: #ffffff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ttsa-vacancy-card:hover {
+  transform: translateY(-2px);
+  border-color: #d7e0eb;
+  box-shadow: 0 8px 20px rgba(16, 33, 62, 0.06);
+}
+
+.ttsa-vacancy-card-icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #fff4d9;
+  color: #936914;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.ttsa-vacancy-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ttsa-vacancy-card-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #9b7416;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+}
+
+.ttsa-vacancy-card-content h4 {
+  margin: 0;
+  color: #172b4d;
+  font-size: 0.96rem;
+  font-weight: 750;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-vacancy-card-content p {
+  margin: 7px 0 0;
+  color: #758196;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.ttsa-vacancy-open-indicator {
+  flex-shrink: 0;
+  padding: 5px 8px;
+  border-radius: 20px;
+  background: #fff4d9;
+  color: #865d0a;
+  font-size: 0.67rem;
+  font-weight: 800;
+}
+
+/* EMPTY STATE */
+
+.ttsa-vacancy-empty {
+  padding: 42px 20px;
+  border: 1px dashed #d7e0eb;
+  border-radius: 14px;
+  background: #fafbfd;
+  text-align: center;
+}
+
+.ttsa-vacancy-empty-icon {
+  display: flex;
+  width: 46px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: #e8f6ed;
+  color: #21804a;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.ttsa-vacancy-empty h4 {
+  margin: 0 0 10px;
+  color: #172b4d;
+  font-size: 1.05rem;
+}
+
+.ttsa-vacancy-empty p {
+  max-width: 490px;
+  margin: 0 auto;
+  color: #718096;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+/* LOADING AND ERROR */
+
+.ttsa-vacancies-section .ttsa-leadership-message {
+  padding: 24px;
+  border-radius: 12px;
+  background: #f7f9fc;
+  color: #536176;
+  text-align: center;
+}
+
+.ttsa-vacancies-section .ttsa-leadership-error {
+  background: #fff4f3;
+  color: #b42318;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .ttsa-vacancy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ttsa-vacancy-results {
+    padding: 24px;
+  }
+
+  .ttsa-vacancy-tab {
+    padding: 14px 11px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .ttsa-vacancies-section {
+    padding: 50px 18px;
+  }
+
+  .ttsa-vacancies-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ttsa-vacancy-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 6px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ttsa-vacancy-tab {
+    min-width: 125px;
+    flex: 0 0 auto;
+    padding: 13px 15px;
+    scroll-snap-align: start;
+  }
+
+  .ttsa-vacancy-results {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .ttsa-vacancy-results-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ttsa-vacancy-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .ttsa-vacancies-section {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .ttsa-vacancy-results {
+    padding: 16px 12px;
+  }
+
+  .ttsa-vacancy-card {
+    gap: 10px;
+    padding: 13px 10px;
+  }
+
+  .ttsa-vacancy-open-indicator {
+    padding: 4px 6px;
+  }
+}

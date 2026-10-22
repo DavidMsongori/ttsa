@@ -1,0 +1,609 @@
+
+/* =========================================
+   TTSA PUBLIC LEADERSHIP PAGE
+========================================= */
+
+.ttsa-public-leadership {
+  color: #172b4d;
+  background: #ffffff;
+}
+
+.ttsa-leadership-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.ttsa-leadership-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 88px 24px 82px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(244, 201, 93, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(125deg, #10213e 0%, #172b4d 58%, #23456d 100%);
+}
+
+.ttsa-leadership-hero::after {
+  position: absolute;
+  right: -100px;
+  bottom: -180px;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.ttsa-leadership-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.ttsa-leadership-eyebrow {
+  display: inline-block;
+  color: #b78617;
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.6;
+}
+
+.ttsa-leadership-hero .ttsa-leadership-eyebrow {
+  color: #f4c95d;
+}
+
+.ttsa-leadership-hero h1 {
+  margin: 20px 0;
+  color: #ffffff;
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  font-weight: 850;
+  letter-spacing: -1.8px;
+  line-height: 1.08;
+}
+
+.ttsa-leadership-hero h1 span {
+  color: #f4c95d;
+}
+
+.ttsa-leadership-hero p {
+  max-width: 670px;
+  margin: 0 0 28px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.ttsa-leadership-hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.ttsa-leadership-hero-link span {
+  color: #f4c95d;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.ttsa-leadership-hero-link:hover span {
+  transform: translateY(4px);
+}
+
+/* SHARED SECTION LAYOUT */
+
+.ttsa-leadership-content-section,
+.ttsa-constituency-section,
+.ttsa-vacancies-section {
+  padding: 64px 24px;
+}
+
+.ttsa-leadership-content-section {
+  background: #ffffff;
+}
+
+.ttsa-constituency-section {
+  background: #f5f7fb;
+}
+
+.ttsa-vacancies-section {
+  background: #ffffff;
+}
+
+.ttsa-leadership-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.ttsa-leadership-section-heading > div {
+  max-width: 700px;
+}
+
+.ttsa-leadership-section-heading h2 {
+  margin: 8px 0 12px;
+  color: #172b4d;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+}
+
+.ttsa-leadership-section-heading p {
+  max-width: 660px;
+  margin: 0;
+  color: #657187;
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+.ttsa-leadership-count,
+.ttsa-constituency-member-count {
+  flex-shrink: 0;
+  padding: 9px 13px;
+  border: 1px solid #dce4ef;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #172b4d;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+/* LEADER CARDS */
+
+.ttsa-public-leaders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.ttsa-public-leader-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e4e9f1;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(23, 43, 77, 0.045);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ttsa-public-leader-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(23, 43, 77, 0.1);
+}
+
+.ttsa-public-leader-photo {
+  display: block;
+  width: 100%;
+  height: 255px;
+  object-fit: cover;
+  object-position: center 25%;
+  background: #e9eef6;
+}
+
+.ttsa-public-leader-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #172b4d;
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.ttsa-public-leader-info {
+  padding: 20px;
+}
+
+.ttsa-public-leader-position {
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #a47710;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.ttsa-public-leader-info h3 {
+  margin: 0 0 8px;
+  color: #172b4d;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-public-leader-info p {
+  margin: 0;
+  color: #718096;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+/* CONSTITUENCY COMMITTEES */
+
+.ttsa-constituency-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ttsa-constituency-block {
+  padding: 24px;
+  border: 1px solid #e2e8f1;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.ttsa-constituency-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e9edf4;
+}
+
+.ttsa-constituency-heading > div > span {
+  color: #a47710;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.ttsa-constituency-heading h3 {
+  margin: 6px 0 0;
+  color: #172b4d;
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+.ttsa-constituency-no-leaders {
+  margin: 0;
+  padding: 18px;
+  border-radius: 8px;
+  background: #f6f8fc;
+  color: #6c788c;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* VACANT POSITIONS */
+
+.ttsa-vacancy-total {
+  flex-shrink: 0;
+  padding: 10px 14px;
+  border: 1px solid #f0d9a2;
+  border-radius: 7px;
+  background: #fff8e7;
+  color: #875d08;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.ttsa-vacancies-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.ttsa-vacancy-group > h3 {
+  margin: 0 0 16px;
+  color: #172b4d;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.ttsa-vacancy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.ttsa-vacancy-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #e6eaf1;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.ttsa-vacancy-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #fff3d4;
+  color: #94690b;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.ttsa-vacancy-status {
+  display: block;
+  margin-bottom: 5px;
+  color: #a47710;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.ttsa-vacancy-card h4 {
+  margin: 0 0 6px;
+  color: #172b4d;
+  font-size: 0.98rem;
+  font-weight: 800;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-vacancy-card p {
+  margin: 0;
+  color: #758196;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* EMPTY, LOADING AND ERROR STATES */
+
+.ttsa-leadership-message {
+  padding: 22px;
+  border: 1px solid #e3e9f2;
+  border-radius: 9px;
+  background: #f7f9fc;
+  color: #657187;
+  line-height: 1.7;
+}
+
+.ttsa-leadership-error {
+  border-color: #f0d0d0;
+  background: #fff5f5;
+  color: #a12e2e;
+}
+
+.ttsa-leadership-empty {
+  padding: 36px 24px;
+  border: 1px dashed #d5deeb;
+  border-radius: 12px;
+  background: #f8fafd;
+  text-align: center;
+}
+
+.ttsa-leadership-empty h3 {
+  margin: 0 0 10px;
+  color: #172b4d;
+  font-size: 1.2rem;
+}
+
+.ttsa-leadership-empty p {
+  max-width: 540px;
+  margin: 0 auto;
+  color: #718096;
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+/* CALL TO ACTION */
+
+.ttsa-leadership-cta {
+  padding: 68px 24px;
+  background:
+    radial-gradient(
+      circle at 100% 0,
+      rgba(244, 201, 93, 0.13),
+      transparent 35%
+    ),
+    #172b4d;
+  color: #ffffff;
+}
+
+.ttsa-leadership-cta-inner {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ttsa-leadership-cta .ttsa-leadership-eyebrow {
+  color: #f4c95d;
+}
+
+.ttsa-leadership-cta h2 {
+  margin: 14px 0;
+  color: #ffffff;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 850;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+}
+
+.ttsa-leadership-cta p {
+  max-width: 680px;
+  margin: 0 auto 26px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.ttsa-leadership-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.ttsa-leadership-cta-primary,
+.ttsa-leadership-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ttsa-leadership-cta-primary {
+  background: #f4c95d;
+  color: #172b4d;
+}
+
+.ttsa-leadership-cta-primary:hover {
+  transform: translateY(-2px);
+  background: #ffda78;
+}
+
+.ttsa-leadership-cta-secondary {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+.ttsa-leadership-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+  .ttsa-public-leaders-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ttsa-vacancy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ttsa-public-leader-photo {
+    height: 245px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .ttsa-leadership-hero {
+    padding: 62px 20px;
+  }
+
+  .ttsa-leadership-hero h1 {
+    font-size: 2.35rem;
+    letter-spacing: -1px;
+  }
+
+  .ttsa-leadership-hero p {
+    font-size: 0.95rem;
+  }
+
+  .ttsa-leadership-content-section,
+  .ttsa-constituency-section,
+  .ttsa-vacancies-section {
+    padding: 44px 18px;
+  }
+
+  .ttsa-leadership-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ttsa-leadership-section-heading h2 {
+    font-size: 1.85rem;
+  }
+
+  .ttsa-public-leaders-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .ttsa-public-leader-card {
+    display: grid;
+    grid-template-columns: 115px minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .ttsa-public-leader-photo {
+    width: 115px;
+    height: 100%;
+    min-height: 155px;
+    object-fit: cover;
+  }
+
+  .ttsa-public-leader-info {
+    align-self: center;
+    padding: 16px;
+  }
+
+  .ttsa-public-leader-info h3 {
+    font-size: 1rem;
+  }
+
+  .ttsa-constituency-block {
+    padding: 17px;
+  }
+
+  .ttsa-constituency-heading {
+    align-items: flex-start;
+  }
+
+  .ttsa-constituency-heading h3 {
+    font-size: 1.25rem;
+  }
+
+  .ttsa-vacancy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ttsa-vacancy-card {
+    padding: 15px;
+  }
+
+  .ttsa-leadership-cta {
+    padding: 50px 20px;
+  }
+
+  .ttsa-leadership-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ttsa-leadership-cta-primary,
+  .ttsa-leadership-cta-secondary {
+    width: 100%;
+  }
+}

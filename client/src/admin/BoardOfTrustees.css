@@ -1,0 +1,408 @@
+
+.ttsa-bot-admin {
+  margin-top: 32px;
+  color: #18243a;
+}
+
+.ttsa-bot-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.ttsa-bot-eyebrow {
+  color: #a77a1c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.ttsa-bot-header h2 {
+  margin: 8px 0;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.ttsa-bot-header p,
+.ttsa-bot-panel-heading p {
+  margin: 0;
+  color: #647084;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.ttsa-bot-total {
+  flex-shrink: 0;
+  min-width: 145px;
+  padding: 16px;
+  border: 1px solid #e4e9f0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.ttsa-bot-total strong,
+.ttsa-bot-total span {
+  display: block;
+}
+
+.ttsa-bot-total strong {
+  color: #172b4d;
+  font-size: 1.8rem;
+}
+
+.ttsa-bot-total span {
+  margin-top: 4px;
+  color: #647084;
+  font-size: 0.78rem;
+}
+
+.ttsa-bot-layout {
+  display: grid;
+  grid-template-columns: minmax(270px, 0.85fr) minmax(0, 1.4fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.ttsa-bot-panel {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #e4e9f0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 26px rgba(18, 35, 61, 0.04);
+}
+
+.ttsa-bot-panel-heading {
+  margin-bottom: 22px;
+}
+
+.ttsa-bot-panel-heading h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.ttsa-bot-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.ttsa-bot-form label {
+  margin-top: 8px;
+  color: #344157;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ttsa-bot-form input,
+.ttsa-bot-form select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 12px;
+  border: 1px solid #d7dee8;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #18243a;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.ttsa-bot-form input:focus,
+.ttsa-bot-form select:focus {
+  border-color: #284d7d;
+  box-shadow: 0 0 0 3px rgba(40, 77, 125, 0.1);
+}
+
+.ttsa-bot-form input[type="file"] {
+  padding: 8px;
+  font-size: 0.8rem;
+}
+
+.ttsa-bot-form input[type="file"]::file-selector-button {
+  margin-right: 10px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: #edf1f7;
+  color: #243b5c;
+  cursor: pointer;
+}
+
+.ttsa-bot-hint {
+  color: #778296;
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+.ttsa-bot-photo-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #e4e9f0;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.ttsa-bot-photo-preview img {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  object-fit: cover;
+}
+
+.ttsa-bot-photo-preview span {
+  color: #56647a;
+  font-size: 0.8rem;
+}
+
+.ttsa-bot-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.ttsa-bot-primary-button,
+.ttsa-bot-secondary-button {
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.ttsa-bot-primary-button {
+  flex: 1;
+  background: #172b4d;
+  color: #fff;
+}
+
+.ttsa-bot-primary-button:hover:not(:disabled) {
+  background: #254773;
+}
+
+.ttsa-bot-secondary-button {
+  border: 1px solid #d7dee8;
+  background: #fff;
+  color: #344157;
+}
+
+.ttsa-bot-primary-button:disabled,
+.ttsa-bot-secondary-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ttsa-bot-alert {
+  margin-bottom: 18px;
+  padding: 13px 15px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-bot-alert.error {
+  border-color: #f1caca;
+  background: #fff1f1;
+  color: #a12626;
+}
+
+.ttsa-bot-alert.success {
+  border-color: #c9e9d4;
+  background: #effaf2;
+  color: #21663a;
+}
+
+.ttsa-bot-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ttsa-bot-group {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e8edf3;
+}
+
+.ttsa-bot-group:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.ttsa-bot-group-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ttsa-bot-group-heading h4 {
+  margin: 0 0 5px;
+  font-size: 0.95rem;
+}
+
+.ttsa-bot-group-heading span {
+  color: #758196;
+  font-size: 0.76rem;
+}
+
+.ttsa-bot-seat-count {
+  flex-shrink: 0;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #edf2f8;
+  color: #28466d !important;
+  font-weight: 800;
+}
+
+.ttsa-bot-member {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #e6ebf2;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.ttsa-bot-member-photo {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.ttsa-bot-member-photo.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf0f7;
+  color: #27466e;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.ttsa-bot-member-details {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.ttsa-bot-member-details strong {
+  overflow-wrap: anywhere;
+  font-size: 0.88rem;
+}
+
+.ttsa-bot-member-details span {
+  color: #778296;
+  font-size: 0.76rem;
+}
+
+.ttsa-bot-member-actions {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ttsa-bot-member-actions button {
+  padding: 7px 9px;
+  border: 1px solid #dce3ec;
+  border-radius: 7px;
+  background: #fff;
+  color: #27466e;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ttsa-bot-member-actions button.remove {
+  border-color: #f0d0d0;
+  color: #a12626;
+}
+
+.ttsa-bot-member-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ttsa-bot-vacant,
+.ttsa-bot-empty {
+  margin: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f7f9fc;
+  color: #778296;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.ttsa-bot-president-group {
+  padding: 16px;
+  border: 1px solid #e5d6ad;
+  border-radius: 12px;
+  background: #fffcf4;
+}
+
+.ttsa-bot-auto-badge {
+  flex-shrink: 0;
+  padding: 6px 9px;
+  border-radius: 20px;
+  background: #f4e8c7;
+  color: #755515 !important;
+  font-size: 0.7rem !important;
+  font-weight: 800;
+}
+
+@media (max-width: 1050px) {
+  .ttsa-bot-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ttsa-bot-header {
+    flex-direction: column;
+  }
+
+  .ttsa-bot-total {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .ttsa-bot-panel {
+    padding: 17px;
+  }
+
+  .ttsa-bot-member {
+    flex-wrap: wrap;
+  }
+
+  .ttsa-bot-member-details {
+    flex-basis: calc(100% - 70px);
+  }
+
+  .ttsa-bot-member-actions {
+    width: 100%;
+    padding-left: 62px;
+  }
+}

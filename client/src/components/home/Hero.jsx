@@ -16,19 +16,22 @@ export default function Hero() {
     let intervalId
 
     const createPlayer = () => {
-      if (cancelled || !playerContainerRef.current || playerRef.current) {
+      if (
+        cancelled ||
+        !playerContainerRef.current ||
+        playerRef.current
+      ) {
         return
       }
 
       const player = new window.YT.Player(playerContainerRef.current, {
-        width: '100%',
-        height: '100%',
         videoId: VIDEO_ID,
         playerVars: {
           autoplay: 1,
           controls: 0,
           disablekb: 1,
           fs: 0,
+          loop: 1,
           mute: 1,
           playsinline: 1,
           rel: 0,
@@ -61,7 +64,7 @@ export default function Hero() {
                 currentPlayer.seekTo(START_SECONDS, true)
                 currentPlayer.playVideo()
               }
-            }, 200)
+            }, 250)
           },
 
           onError: (event) => {
@@ -86,7 +89,7 @@ export default function Hero() {
       window.onYouTubeIframeAPIReady = handleApiReady
 
       let script = document.querySelector(
-        'script[src="https://www.youtube.com/iframe_api"]',
+        'script[src="https://www.youtube.com/iframe_api"]'
       )
 
       if (!script) {
@@ -126,12 +129,12 @@ export default function Hero() {
 
       <div className="ttsa-hero-content ttsa-container">
         <span className="ttsa-hero-eyebrow">
-          THE VOICE OF TAITA TAVETA STUDENTS
+          The Voice of Taita Taveta Students
         </span>
 
         <h1>
           One Voice.
-          <span> Shared Future.</span>
+          <span>Shared Future.</span>
         </h1>
 
         <h2>
@@ -155,7 +158,7 @@ export default function Hero() {
 
         <div className="ttsa-hero-caption">
           <span className="ttsa-hero-caption-line" />
-          <span>UNITED STUDENTS. STRONGER REPRESENTATION.</span>
+          <span>United Students. Stronger Representation.</span>
         </div>
       </div>
 

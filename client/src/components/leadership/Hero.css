@@ -1,0 +1,173 @@
+
+/* TTSA LEADERSHIP HERO — CENTERED DESIGN */
+
+.ttsa-leadership-hero {
+  position: relative;
+  display: flex;
+  min-height: 440px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 90px 24px;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(244, 201, 93, 0.16),
+      transparent 45%
+    ),
+    linear-gradient(
+      125deg,
+      #10213e 0%,
+      #172b4d 58%,
+      #23456d 100%
+    );
+  color: #ffffff;
+  text-align: center;
+}
+
+.ttsa-leadership-hero::before,
+.ttsa-leadership-hero::after {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.ttsa-leadership-hero::before {
+  top: -240px;
+  left: -120px;
+}
+
+.ttsa-leadership-hero::after {
+  right: -150px;
+  bottom: -250px;
+}
+
+.ttsa-leadership-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  max-width: 950px;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* EYEBROW */
+
+.ttsa-leadership-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #f4c95d;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* MAIN HEADING */
+
+.ttsa-leadership-hero h1 {
+  margin: 18px 0 22px;
+  color: #ffffff;
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-weight: 850;
+  letter-spacing: -1.8px;
+  line-height: 1.12;
+  text-align: center;
+}
+
+.ttsa-leadership-hero h1 span {
+  color: #f4c95d;
+}
+
+/* DESCRIPTION */
+
+.ttsa-leadership-hero p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  text-align: center;
+}
+
+/* CALL TO ACTION */
+
+.ttsa-leadership-hero-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 22px;
+  border: 1px solid rgba(244, 201, 93, 0.55);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 750;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ttsa-leadership-hero-link:hover {
+  transform: translateY(-2px);
+  border-color: #f4c95d;
+  background: rgba(244, 201, 93, 0.1);
+}
+
+.ttsa-leadership-hero-link span {
+  color: #f4c95d;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.ttsa-leadership-hero-link:hover span {
+  transform: translateY(3px);
+}
+
+/* TABLETS AND MOBILE */
+
+@media (max-width: 600px) {
+  .ttsa-leadership-hero {
+    min-height: 390px;
+    padding: 70px 20px;
+  }
+
+  .ttsa-leadership-eyebrow {
+    font-size: 0.66rem;
+    letter-spacing: 1.4px;
+  }
+
+  .ttsa-leadership-hero h1 {
+    margin: 16px 0 18px;
+    font-size: clamp(2.15rem, 8vw, 3rem);
+    letter-spacing: -1px;
+    line-height: 1.15;
+  }
+
+  .ttsa-leadership-hero p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .ttsa-leadership-hero-link {
+    padding: 12px 18px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ttsa-leadership-hero-link,
+  .ttsa-leadership-hero-link span {
+    transition: none;
+  }
+}

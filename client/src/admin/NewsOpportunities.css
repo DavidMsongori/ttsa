@@ -1,0 +1,452 @@
+
+.ttsa-content-admin {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 28px;
+  color: #172b4d;
+}
+
+.ttsa-content-admin *,
+.ttsa-content-admin *::before,
+.ttsa-content-admin *::after {
+  box-sizing: border-box;
+}
+
+.ttsa-content-admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ttsa-content-eyebrow {
+  color: #a47b25;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ttsa-content-admin-header h1 {
+  margin: 8px 0;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 850;
+  letter-spacing: -0.7px;
+}
+
+.ttsa-content-admin-header p {
+  margin: 0;
+  color: #69768a;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.ttsa-content-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e2e7ef;
+}
+
+.ttsa-content-tabs button {
+  padding: 11px 17px;
+  border: 1px solid #dfe5ed;
+  border-radius: 8px;
+  background: #fff;
+  color: #536178;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ttsa-content-tabs button.active {
+  border-color: #172b4d;
+  background: #172b4d;
+  color: #fff;
+}
+
+.ttsa-content-alert {
+  margin-bottom: 18px;
+  padding: 13px 16px;
+  border: 1px solid;
+  border-radius: 8px;
+  font-size: 0.87rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-content-alert.error {
+  border-color: #f0caca;
+  background: #fff5f5;
+  color: #a12626;
+}
+
+.ttsa-content-alert.success {
+  border-color: #b8e2cc;
+  background: #f0fbf5;
+  color: #17633c;
+}
+
+.ttsa-content-admin-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.ttsa-content-form,
+.ttsa-content-list-panel {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid #e2e7ef;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgb(23 43 77 / 4%);
+}
+
+.ttsa-content-form-heading,
+.ttsa-content-list-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.ttsa-content-form-heading h2,
+.ttsa-content-list-heading h2 {
+  margin: 0 0 6px;
+  color: #172b4d;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.ttsa-content-form-heading p,
+.ttsa-content-list-heading p {
+  margin: 0;
+  color: #788497;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.ttsa-content-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  margin-bottom: 17px;
+}
+
+.ttsa-content-field > span {
+  color: #34435a;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+.ttsa-content-field input,
+.ttsa-content-field select,
+.ttsa-content-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #dce3ed;
+  border-radius: 7px;
+  outline: none;
+  background: #fff;
+  color: #172b4d;
+  font-family: inherit;
+  font-size: 0.88rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ttsa-content-field input:focus,
+.ttsa-content-field select:focus,
+.ttsa-content-field textarea:focus {
+  border-color: #b58a30;
+  box-shadow: 0 0 0 3px rgb(181 138 48 / 12%);
+}
+
+.ttsa-content-field textarea {
+  resize: vertical;
+  line-height: 1.65;
+}
+
+.ttsa-content-field input[type='file'] {
+  padding: 9px;
+  background: #f8fafc;
+  font-size: 0.8rem;
+}
+
+.ttsa-content-field small {
+  color: #788497;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.ttsa-content-image-preview {
+  display: block;
+  width: 100%;
+  max-height: 230px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #f1f4f8;
+}
+
+.ttsa-content-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ttsa-content-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0 20px;
+  color: #45536a;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.ttsa-content-checkbox input {
+  width: 17px;
+  height: 17px;
+  accent-color: #172b4d;
+}
+
+.ttsa-content-primary-button {
+  width: 100%;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #172b4d;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.ttsa-content-primary-button:hover {
+  background: #243d66;
+}
+
+.ttsa-content-primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ttsa-content-text-button,
+.ttsa-content-refresh-button {
+  padding: 7px 10px;
+  border: 1px solid #dce3ed;
+  border-radius: 6px;
+  background: #fff;
+  color: #43536b;
+  font-family: inherit;
+  font-size: 0.77rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ttsa-content-refresh-button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.ttsa-content-muted {
+  color: #788497;
+  font-size: 0.87rem;
+}
+
+.ttsa-content-empty {
+  padding: 35px 15px;
+  border: 1px dashed #dce3ed;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.ttsa-content-empty h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.ttsa-content-empty p {
+  margin: 0;
+  color: #788497;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.ttsa-content-records {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.ttsa-content-record {
+  display: flex;
+  gap: 13px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #e5eaf1;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.ttsa-content-record-image {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 7px;
+  background: #f1f4f8;
+  object-fit: cover;
+}
+
+.ttsa-content-record-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.ttsa-content-record-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.ttsa-content-status,
+.ttsa-content-featured {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.ttsa-content-status.status-published {
+  background: #e7f7ed;
+  color: #187341;
+}
+
+.ttsa-content-status.status-draft {
+  background: #eef1f6;
+  color: #536178;
+}
+
+.ttsa-content-status.status-archived,
+.ttsa-content-status.status-closed {
+  background: #fff1df;
+  color: #925b13;
+}
+
+.ttsa-content-featured {
+  background: #fff7df;
+  color: #8a6719;
+}
+
+.ttsa-content-record h3 {
+  margin: 0 0 7px;
+  color: #172b4d;
+  font-size: 0.91rem;
+  font-weight: 800;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-content-record-meta {
+  margin: 0 0 5px;
+  color: #788497;
+  font-size: 0.74rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-content-record-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.ttsa-content-record-actions button {
+  padding: 6px 9px;
+  border: 1px solid #dce3ed;
+  border-radius: 5px;
+  background: #fff;
+  color: #34435a;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ttsa-content-record-actions button:hover {
+  background: #f3f6fa;
+}
+
+.ttsa-content-record-actions button.delete {
+  border-color: #f0d1d1;
+  color: #b42323;
+}
+
+.ttsa-content-record-actions button.delete:hover {
+  background: #fff3f3;
+}
+
+@media (max-width: 1100px) {
+  .ttsa-content-admin-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .ttsa-content-admin {
+    padding: 16px;
+  }
+
+  .ttsa-content-form,
+  .ttsa-content-list-panel {
+    padding: 15px;
+  }
+
+  .ttsa-content-tabs button {
+    flex: 1;
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+
+  .ttsa-content-record {
+    gap: 10px;
+    padding: 9px;
+  }
+
+  .ttsa-content-record-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .ttsa-content-record-actions button {
+    padding: 6px 7px;
+  }
+
+  .ttsa-content-two-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ttsa-content-field input,
+  .ttsa-content-field select,
+  .ttsa-content-field textarea,
+  .ttsa-content-primary-button {
+    transition: none;
+  }
+}

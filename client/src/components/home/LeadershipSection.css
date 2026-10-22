@@ -1,0 +1,228 @@
+
+.ttsa-leadership-section {
+  padding: 48px 20px;
+  background: #172b4d;
+  color: #ffffff;
+}
+
+.ttsa-leadership-inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Leadership text */
+.ttsa-leadership-copy {
+  max-width: 560px;
+}
+
+.ttsa-leadership-copy .ttsa-kicker {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #f4c95d;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ttsa-leadership-copy h2 {
+  margin: 0 0 16px;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.ttsa-leadership-copy p {
+  max-width: 500px;
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.ttsa-leadership-copy .ttsa-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  background: #f4c95d;
+  color: #172b4d;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ttsa-leadership-copy .ttsa-button:hover {
+  background: #ffda78;
+  transform: translateY(-2px);
+}
+
+/* County President card */
+.ttsa-home-president {
+  overflow: hidden;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+}
+
+.ttsa-home-president-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+  color: #f4c95d;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.ttsa-home-president-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #f4c95d;
+}
+
+.ttsa-home-president-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ttsa-home-president-photo {
+  display: block;
+  width: 130px;
+  height: 155px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  object-fit: cover;
+  object-position: center top;
+  background: #ffffff;
+}
+
+.ttsa-home-president-no-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4c95d;
+  color: #172b4d;
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.ttsa-home-president-details {
+  min-width: 0;
+}
+
+.ttsa-home-president-role {
+  display: block;
+  margin-bottom: 8px;
+  color: #f4c95d;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ttsa-home-president-details h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.ttsa-home-president-details a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ttsa-home-president-details a:hover {
+  color: #f4c95d;
+}
+
+.ttsa-home-president-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.ttsa-home-president-placeholder .ttsa-home-president-no-photo {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.ttsa-home-president-placeholder h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.ttsa-home-president-placeholder p {
+  margin: 0;
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+  .ttsa-leadership-section {
+    padding: 36px 18px;
+  }
+
+  .ttsa-leadership-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .ttsa-leadership-copy {
+    max-width: 100%;
+  }
+
+  .ttsa-leadership-copy h2 {
+    font-size: 1.9rem;
+  }
+
+  .ttsa-home-president {
+    padding: 18px;
+  }
+
+  .ttsa-home-president-content {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .ttsa-home-president-photo {
+    width: 110px;
+    height: 135px;
+  }
+}
+
+@media (max-width: 420px) {
+  .ttsa-home-president-content {
+    flex-direction: column;
+  }
+
+  .ttsa-home-president-photo {
+    width: 120px;
+    height: 140px;
+  }
+
+  .ttsa-home-president-details h3 {
+    font-size: 1.2rem;
+  }
+}

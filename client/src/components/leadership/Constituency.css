@@ -1,0 +1,358 @@
+
+/* CONSTITUENCY COMMITTEES SECTION */
+
+.ttsa-constituency-section {
+  padding: 72px 24px;
+  background: #f7f9fc;
+}
+
+.ttsa-constituency-section .ttsa-leadership-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ttsa-constituency-section-heading {
+  margin-bottom: 28px;
+}
+
+.ttsa-constituency-section-heading h2 {
+  margin: 12px 0;
+  color: #14233b;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+}
+
+.ttsa-constituency-section-heading p {
+  max-width: 650px;
+  margin: 0;
+  color: #647084;
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+/* HORIZONTAL SELECTOR */
+
+.ttsa-constituency-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 30px;
+  padding: 7px;
+  border: 1px solid #e4eaf2;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.ttsa-constituency-tab {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 7px;
+  padding: 17px 20px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: #33445c;
+  cursor: pointer;
+  text-align: left;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ttsa-constituency-tab:hover {
+  border-color: #dce5f0;
+  background: #f7f9fc;
+}
+
+.ttsa-constituency-tab.active {
+  border-color: #1d3557;
+  background: #172b4d;
+  color: #ffffff;
+  box-shadow: 0 5px 14px rgba(23, 43, 77, 0.13);
+}
+
+.ttsa-constituency-tab:focus-visible {
+  outline: 3px solid #e7bd52;
+  outline-offset: 3px;
+}
+
+.ttsa-constituency-tab-name {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.ttsa-constituency-tab-count {
+  color: #78869a;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.ttsa-constituency-tab.active .ttsa-constituency-tab-count {
+  color: #d9e4f2;
+}
+
+/* SELECTED CONSTITUENCY PANEL */
+
+.ttsa-selected-constituency {
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid #e5eaf1;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 6px 24px rgba(16, 33, 62, 0.035);
+}
+
+.ttsa-selected-constituency-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.ttsa-constituency-overline {
+  color: #a17b20;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.ttsa-selected-constituency-heading h3 {
+  margin: 8px 0;
+  color: #172b4d;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.ttsa-selected-constituency-heading p {
+  margin: 0;
+  color: #647084;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.ttsa-constituency-member-count {
+  flex-shrink: 0;
+  padding: 9px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  background: #f7f9fc;
+  color: #33445c;
+  font-size: 0.8rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+/* LEADER GRID */
+
+.ttsa-constituency-section .ttsa-constituency-leaders-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 20px;
+}
+
+.ttsa-constituency-leaders-grid > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* EMPTY STATE */
+
+.ttsa-constituency-empty {
+  padding: 38px 20px;
+  border: 1px dashed #d7e0eb;
+  border-radius: 14px;
+  background: #fafbfd;
+  text-align: center;
+}
+
+.ttsa-constituency-empty-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #eaf0f8;
+  color: #233c5e;
+  font-size: 1.6rem;
+}
+
+.ttsa-constituency-empty h4 {
+  margin: 0 0 10px;
+  color: #172b4d;
+  font-size: 1.05rem;
+}
+
+.ttsa-constituency-empty p {
+  max-width: 470px;
+  margin: 0 auto;
+  color: #718096;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+/* VACANT POSITIONS */
+
+.ttsa-constituency-vacancies {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #edf0f5;
+}
+
+.ttsa-constituency-vacancies > h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: #24364f;
+  font-size: 0.96rem;
+  font-weight: 800;
+}
+
+.ttsa-constituency-vacancies > h4 span {
+  display: inline-flex;
+  min-width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  border-radius: 20px;
+  background: #fff2d6;
+  color: #865d0a;
+  font-size: 0.75rem;
+}
+
+.ttsa-constituency-vacancy-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ttsa-constituency-vacancy {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 13px;
+  border: 1px solid #e9edf3;
+  border-radius: 9px;
+  background: #fbfcfe;
+  color: #526176;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.ttsa-constituency-vacancy-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #d49b28;
+}
+
+/* LOADING AND ERROR STATES */
+
+.ttsa-constituency-section .ttsa-leadership-message {
+  padding: 24px;
+  border-radius: 12px;
+  background: #f7f9fc;
+  color: #536176;
+  text-align: center;
+}
+
+.ttsa-constituency-section .ttsa-leadership-error {
+  background: #fff4f3;
+  color: #b42318;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .ttsa-selected-constituency {
+    padding: 24px;
+  }
+
+  .ttsa-constituency-section .ttsa-constituency-leaders-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .ttsa-constituency-tab {
+    padding: 15px;
+  }
+}
+
+/* SMALL TABLETS AND LARGE PHONES */
+
+@media (max-width: 650px) {
+  .ttsa-constituency-section {
+    padding: 50px 18px;
+  }
+
+  .ttsa-constituency-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 6px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ttsa-constituency-tab {
+    min-width: 125px;
+    flex: 0 0 auto;
+    padding: 13px 15px;
+    scroll-snap-align: start;
+  }
+
+  .ttsa-selected-constituency {
+    padding: 20px 16px;
+    border-radius: 14px;
+  }
+
+  .ttsa-selected-constituency-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ttsa-constituency-section .ttsa-constituency-leaders-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+/* NARROW PHONES */
+
+@media (max-width: 380px) {
+  .ttsa-constituency-section {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .ttsa-selected-constituency {
+    padding: 16px 12px;
+  }
+
+  .ttsa-selected-constituency-heading {
+    flex-direction: column;
+  }
+
+  .ttsa-constituency-section .ttsa-constituency-leaders-grid {
+    grid-template-columns: 1fr;
+  }
+}

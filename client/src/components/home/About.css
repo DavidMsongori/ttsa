@@ -1,0 +1,108 @@
+
+.ttsa-about {
+  padding: 28px 20px;
+  background: #fff;
+}
+
+.ttsa-about .ttsa-container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.ttsa-about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.ttsa-about-heading,
+.ttsa-about-copy {
+  min-width: 0;
+}
+
+.ttsa-about .ttsa-kicker {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.ttsa-about-heading h2 {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.ttsa-about-accent {
+  display: flex;
+  gap: 5px;
+  margin-top: 12px;
+}
+
+.ttsa-about-accent span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  background: #c69b45;
+  border-radius: 3px;
+}
+
+.ttsa-about-copy p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.ttsa-about-copy p:last-of-type {
+  margin-bottom: 12px;
+}
+
+.ttsa-about .ttsa-inline-link {
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Tablets and phones */
+@media (max-width: 768px) {
+  .ttsa-about {
+    padding: 24px 18px;
+  }
+
+  .ttsa-about-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .ttsa-about-heading h2 {
+    max-width: 500px;
+    font-size: 28px;
+  }
+
+  .ttsa-about-accent {
+    margin-top: 8px;
+  }
+
+  .ttsa-about-copy p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 480px) {
+  .ttsa-about {
+    padding: 20px 16px;
+  }
+
+  .ttsa-about-grid {
+    gap: 10px;
+  }
+
+  .ttsa-about-heading h2 {
+    font-size: 25px;
+  }
+}
