@@ -9,20 +9,25 @@ export default function Impact() {
   useEffect(() => {
     let isMounted = true
 
-    async function fetchMemberCount() {
-      const { count, error } = await supabase
-        .from('student_profiles')
-        .select('id', { count: 'exact', head: true })
+    
+async function fetchMemberCount() {
+  const { data, error } = await supabase.rpc(
+    'get_public_member_count'
+  )
 
-      if (error) {
-        console.error('Unable to fetch TTSA member count:', error.message)
-        return
-      }
+  if (error) {
+    console.error(
+      'Unable to fetch TTSA member count:',
+      error.message
+    )
+    return
+  }
 
-      if (isMounted) {
-        setMemberCount(count ?? 0)
-      }
-    }
+  if (isMounted) {
+    setMemberCount(Number(data ?? 0))
+  }
+}
+
 
     fetchMemberCount()
 

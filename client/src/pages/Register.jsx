@@ -392,7 +392,7 @@ console.log('Email entered:', form.email)
           <h3>Education information</h3>
 
           <label>
-            University or college
+            Name of Your University/college
             <input
               name="institution"
               value={form.institution}
