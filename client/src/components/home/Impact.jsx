@@ -10,20 +10,17 @@ export default function Impact() {
     let isMounted = true
 
     async function fetchMemberCount() {
-      try {
-        const { count, error } = await supabase
-          .from('profiles')
-          .select('*', { count: 'exact', head: true })
+      const { count, error } = await supabase
+        .from('student_profiles')
+        .select('id', { count: 'exact', head: true })
 
-        if (error) {
-          throw error
-        }
+      if (error) {
+        console.error('Unable to fetch TTSA member count:', error.message)
+        return
+      }
 
-        if (isMounted) {
-          setMemberCount(count ?? 0)
-        }
-      } catch (error) {
-        console.error('Unable to fetch TTSA member count:', error)
+      if (isMounted) {
+        setMemberCount(count ?? 0)
       }
     }
 

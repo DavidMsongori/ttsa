@@ -1,150 +1,104 @@
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 
-const VIDEO_ID = 'l_UwsECR6cE'
-const START_SECONDS = 30
-const END_SECONDS = 50
+const HERO_SLIDES = [
+  {
+    image: '/images/hero-1.jpg',
+    eyebrow: 'The Voice of Taita Taveta Students',
+    title: 'One Voice.',
+    highlight: 'Shared Future.',
+    description:
+      'Bringing students together to speak with one voice, champion their interests and shape a better future for Taita Taveta.',
+  },
+  {
+    image: '/images/hero-2.jpg',
+    eyebrow: 'Together We Can Achieve More',
+    title: 'Stronger Students.',
+    highlight: 'Stronger Community.',
+    description:
+      'Building connections across institutions, empowering student leaders and creating opportunities for every student.',
+  },
+  {
+    image: '/images/hero-3.jpg',
+    eyebrow: 'Leadership. Welfare. Advocacy.',
+    title: 'Your Voice.',
+    highlight: 'Your Future.',
+    description:
+      'Championing student welfare, accountable leadership and meaningful representation throughout Taita Taveta County.',
+  },
+  {
+    image: '/images/hero-4.jpg',
+    eyebrow: 'United for a Common Purpose',
+    title: 'Together We Lead.',
+    highlight: 'Together We Grow.',
+    description:
+      'A united student community committed to service, opportunity and a brighter future for Taita Taveta.',
+  },
+]
+
+const SLIDE_INTERVAL = 5000
 
 export default function Hero() {
-  const playerContainerRef = useRef(null)
-  const playerRef = useRef(null)
+  const [activeSlide, setActiveSlide] = useState(0)
 
+  const currentSlide = HERO_SLIDES[activeSlide]
+
+  // Automatically change slides every 5 seconds.
   useEffect(() => {
-    let cancelled = false
-    let intervalId
+    const interval = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % HERO_SLIDES.length)
+    }, SLIDE_INTERVAL)
 
-    const createPlayer = () => {
-      if (
-        cancelled ||
-        !playerContainerRef.current ||
-        playerRef.current
-      ) {
-        return
-      }
-
-      const player = new window.YT.Player(playerContainerRef.current, {
-        videoId: VIDEO_ID,
-        playerVars: {
-          autoplay: 1,
-          controls: 0,
-          disablekb: 1,
-          fs: 0,
-          loop: 1,
-          mute: 1,
-          playsinline: 1,
-          rel: 0,
-          start: START_SECONDS,
-          origin: window.location.origin,
-        },
-        events: {
-          onReady: (event) => {
-            if (cancelled) {
-              event.target.destroy()
-              return
-            }
-
-            playerRef.current = event.target
-            event.target.mute()
-            event.target.seekTo(START_SECONDS, true)
-            event.target.playVideo()
-
-            intervalId = window.setInterval(() => {
-              const currentPlayer = playerRef.current
-
-              if (
-                !currentPlayer ||
-                typeof currentPlayer.getCurrentTime !== 'function'
-              ) {
-                return
-              }
-
-              if (currentPlayer.getCurrentTime() >= END_SECONDS) {
-                currentPlayer.seekTo(START_SECONDS, true)
-                currentPlayer.playVideo()
-              }
-            }, 250)
-          },
-
-          onError: (event) => {
-            console.error('TTSA hero YouTube error:', event.data)
-          },
-        },
-      })
-
-      playerRef.current = player
-    }
-
-    const previousCallback = window.onYouTubeIframeAPIReady
-
-    const handleApiReady = () => {
-      previousCallback?.()
-      createPlayer()
-    }
-
-    if (window.YT?.Player) {
-      createPlayer()
-    } else {
-      window.onYouTubeIframeAPIReady = handleApiReady
-
-      let script = document.querySelector(
-        'script[src="https://www.youtube.com/iframe_api"]'
-      )
-
-      if (!script) {
-        script = document.createElement('script')
-        script.src = 'https://www.youtube.com/iframe_api'
-        script.async = true
-        document.head.appendChild(script)
-      }
-    }
-
-    return () => {
-      cancelled = true
-      window.clearInterval(intervalId)
-
-      if (window.onYouTubeIframeAPIReady === handleApiReady) {
-        window.onYouTubeIframeAPIReady = previousCallback
-      }
-
-      if (playerRef.current?.destroy) {
-        playerRef.current.destroy()
-      }
-
-      playerRef.current = null
-    }
+    return () => window.clearInterval(interval)
   }, [])
 
+  function showPrevious() {
+    setActiveSlide(
+      (current) =>
+        (current - 1 + HERO_SLIDES.length) % HERO_SLIDES.length
+    )
+  }
+
+  function showNext() {
+    setActiveSlide((current) => (current + 1) % HERO_SLIDES.length)
+  }
+
   return (
-    <section className="ttsa-hero-modern">
-      <div className="ttsa-hero-video" aria-hidden="true">
-        <div
-          ref={playerContainerRef}
-          className="ttsa-hero-video-player"
-        />
+    <section
+      className="ttsa-hero-modern"
+      aria-label="TTSA introduction"
+    >
+      <div className="ttsa-hero-slides" aria-hidden="true">
+        {HERO_SLIDES.map((slide, index) => (
+          <div
+            key={slide.image}
+            className={`ttsa-hero-slide ${
+              index === activeSlide ? 'is-active' : ''
+            }`}
+            style={{ backgroundImage: `url("${slide.image}")` }}
+          />
+        ))}
       </div>
 
       <div className="ttsa-hero-shade" />
 
-      <div className="ttsa-hero-content ttsa-container">
+      <div className="ttsa-hero-content ttsa-container" key={activeSlide}>
         <span className="ttsa-hero-eyebrow">
-          The Voice of Taita Taveta Students
+          {currentSlide.eyebrow}
         </span>
 
         <h1>
-          One Voice.
-          <span>Shared Future.</span>
+          {currentSlide.title}
+          <span>{currentSlide.highlight}</span>
         </h1>
 
         <h2>
           United for Student Representation, Welfare and Advocacy.
         </h2>
 
-        <p>
-          Bringing students together to speak with one voice, champion
-          their interests and shape a better future for Taita Taveta.
-        </p>
+        <p>{currentSlide.description}</p>
 
         <div className="ttsa-hero-buttons">
           <Link to="/register" className="ttsa-hero-primary">
@@ -160,6 +114,41 @@ export default function Hero() {
           <span className="ttsa-hero-caption-line" />
           <span>United Students. Stronger Representation.</span>
         </div>
+      </div>
+
+      <div className="ttsa-hero-controls" aria-label="Slideshow controls">
+        <button
+          type="button"
+          className="ttsa-hero-arrow"
+          onClick={showPrevious}
+          aria-label="Previous slide"
+        >
+          &#8592;
+        </button>
+
+        <div className="ttsa-hero-dots">
+          {HERO_SLIDES.map((slide, index) => (
+            <button
+              key={slide.image}
+              type="button"
+              className={`ttsa-hero-dot ${
+                index === activeSlide ? 'is-active' : ''
+              }`}
+              onClick={() => setActiveSlide(index)}
+              aria-label={`Show slide ${index + 1}`}
+              aria-current={index === activeSlide ? 'true' : undefined}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className="ttsa-hero-arrow"
+          onClick={showNext}
+          aria-label="Next slide"
+        >
+          &#8594;
+        </button>
       </div>
 
       <a

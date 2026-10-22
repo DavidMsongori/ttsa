@@ -50,6 +50,11 @@ export default function AdminLayout() {
       icon: '♔',
     },
     {
+      to: '/admin/programs',
+      label: 'Programs & Initiatives',
+      icon: '📋',
+    },
+    {
       to: '/admin/announcements',
       label: 'Announcements',
       icon: '♧',
@@ -58,6 +63,11 @@ export default function AdminLayout() {
       to: '/admin/news-opportunities',
       label: 'News & Opportunities',
       icon: '📰',
+    },
+    {
+      to: '/admin/contact-messages',
+      label: 'Contact Messages',
+      icon: '✉',
     },
   ]
 

@@ -2,11 +2,20 @@
 .auth-page {
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 40px 18px;
-  background: #f4f7f3;
-  color: #183b2b;
+  justify-content: center;
+  padding: 40px 20px;
+
+  /* Login background image */
+  background:
+    linear-gradient(
+      135deg,
+      rgba(3, 35, 24, 0.78),
+      rgba(3, 35, 24, 0.48)
+    ),
+    url('/images/login.jpg') center center / cover no-repeat;
+
+  background-attachment: fixed;
 }
 
 .auth-card {
@@ -20,12 +29,24 @@
 }
 
 .auth-brand {
-  display: inline-block;
-  color: #174b35;
-  font-size: 28px;
-  font-weight: 800;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 22px;
   text-decoration: none;
-  letter-spacing: -1px;
+}
+
+.auth-logo {
+  display: block;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.auth-brand:focus-visible {
+  outline: 2px solid #207447;
+  outline-offset: 5px;
+  border-radius: 6px;
 }
 
 .auth-eyebrow {
@@ -150,5 +171,30 @@
 @media (max-width: 520px) {
   .auth-card {
     padding: 26px 20px;
+  }
+}
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  padding: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 20px 14px;
+    background-attachment: scroll;
+  }
+
+  .auth-card {
+    padding: 26px 22px;
+    border-radius: 14px;
   }
 }

@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabaseClient'
 import './Dashboard.css'
@@ -38,6 +38,8 @@ export default function Dashboard() {
   const [editing, setEditing] = useState(false)
   const [saving, setSaving] = useState(false)
   const [editForm, setEditForm] = useState(EMPTY_FORM)
+  const pictureInputRef = useRef(null)
+  const [uploadingPicture, setUploadingPicture] = useState(false)
 
   useEffect(() => {
     let active = true
@@ -114,6 +116,122 @@ export default function Dashboard() {
       active = false
     }
   }, [navigate])
+
+async function handleProfilePictureUpload(event) {
+  const file = event.target.files?.[0]
+
+  // Allow the same image to be selected again later.
+  event.target.value = ''
+
+  if (!file) return
+
+  setError('')
+  setNotice('')
+
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/webp']
+
+  if (!allowedTypes.includes(file.type)) {
+    setError('Please select a JPG, PNG or WebP image.')
+    return
+  }
+
+  // Limit uploads to 5 MB.
+  if (file.size > 5 * 1024 * 1024) {
+    setError('Your image must be 5 MB or smaller.')
+    return
+  }
+
+  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+  const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
+
+  if (!cloudName || !uploadPreset) {
+    setError('Image uploads are not configured. Please contact TTSA support.')
+    return
+  }
+
+  setUploadingPicture(true)
+
+  try {
+    const {
+      data: { user },
+      error: authError,
+    } = await supabase.auth.getUser()
+
+    if (authError || !user) {
+      setError('Your session has expired. Please log in again.')
+      return
+    }
+
+   const formData = new FormData()
+formData.append('file', file)
+formData.append('upload_preset', uploadPreset)
+formData.append('folder', 'ttsa/profile-pictures')
+formData.append('public_id', `${user.id}_${Date.now()}`)
+
+    const response = await fetch(
+      `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+      {
+        method: 'POST',
+        body: formData,
+      }
+    )
+
+    const result = await response.json()
+
+    if (!response.ok || !result.secure_url) {
+      console.error('Cloudinary upload failed:', result)
+      throw new Error(
+        result.error?.message || 'The image upload failed. Please try again.'
+      )
+    }
+
+    const { data, error: updateError } = await supabase
+      .from('student_profiles')
+      .update({
+        profile_picture_url: result.secure_url,
+      })
+      .eq('id', user.id)
+      .select(`
+        registration_code,
+        full_name,
+        phone,
+        county,
+        constituency,
+        ward,
+        institution,
+        course,
+        course_level,
+        course_duration_years,
+        year_joined,
+        admission_number,
+        profile_picture_url,
+        created_at
+      `)
+      .maybeSingle()
+
+    if (updateError) {
+  console.error('Profile picture save failed:', updateError)
+
+  throw new Error(
+    `Supabase error: ${updateError.message}`
+  )
+}
+
+    if (!data) {
+      throw new Error(
+        'Your profile picture was not saved. Please check your Supabase update permissions.'
+      )
+    }
+
+    setProfile(data)
+    setNotice('Your profile picture has been updated successfully.')
+  } catch (err) {
+    console.error('Profile picture update error:', err)
+    setError(err.message || 'Unable to update your profile picture.')
+  } finally {
+    setUploadingPicture(false)
+  }
+}
 
   async function handleLogout() {
     const { error: logoutError } = await supabase.auth.signOut()
@@ -319,6 +437,59 @@ export default function Dashboard() {
         Number(profile.course_duration_years)
       : null
 
+function renderProfilePictureEditor() {
+  return (
+    <section className="profile-picture-panel">
+      <div className="profile-picture-preview">
+        {profile?.profile_picture_url ? (
+          <img
+            src={profile.profile_picture_url}
+            alt={`${profile.full_name || 'Student'} profile`}
+            className="profile-picture-large"
+          />
+        ) : (
+          <div className="profile-picture-placeholder-large">
+            {profile?.full_name?.charAt(0)?.toUpperCase() || 'S'}
+          </div>
+        )}
+      </div>
+
+      <div className="profile-picture-details">
+        <h2>Profile Picture</h2>
+
+        <p>
+          {profile?.profile_picture_url
+            ? 'Your profile picture is saved. You can replace it whenever you need to.'
+            : 'You have not added a profile picture yet. Upload one to complete your TTSA profile.'}
+        </p>
+
+        <input
+          ref={pictureInputRef}
+          type="file"
+          accept="image/jpeg,image/png,image/webp"
+          onChange={handleProfilePictureUpload}
+          hidden
+        />
+
+        <button
+          type="button"
+          className="dashboard-primary-button"
+          onClick={() => pictureInputRef.current?.click()}
+          disabled={uploadingPicture}
+        >
+          {uploadingPicture
+            ? 'Uploading Picture...'
+            : profile?.profile_picture_url
+              ? 'Change Picture'
+              : 'Upload Profile Picture'}
+        </button>
+
+        <small>JPG, PNG or WebP · Maximum size: 5 MB</small>
+      </div>
+    </section>
+  )
+}
+
   if (loading) {
     return (
       <main className="dashboard-state">
@@ -476,6 +647,7 @@ export default function Dashboard() {
 
             {activeSection === 'dashboard' && (
               <>
+              {renderProfilePictureEditor()}
                 <p className="dashboard-eyebrow">STUDENT PORTAL</p>
 
                 <div className="student-welcome">
@@ -611,6 +783,7 @@ export default function Dashboard() {
 
             {activeSection === 'profile' && (
               <>
+              {renderProfilePictureEditor()}
                 <p className="dashboard-eyebrow">ACCOUNT DETAILS</p>
                 <h1>My Profile</h1>
                 <p className="dashboard-subtitle">

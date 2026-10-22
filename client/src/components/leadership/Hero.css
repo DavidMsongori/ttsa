@@ -1,49 +1,48 @@
-
-/* TTSA LEADERSHIP HERO — CENTERED DESIGN */
+/* TTSA LEADERSHIP HERO — COMPACT DESIGN */
 
 .ttsa-leadership-hero {
   position: relative;
   display: flex;
-  min-height: 440px;
+  min-height: 340px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 90px 24px;
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(244, 201, 93, 0.16),
-      transparent 45%
-    ),
-    linear-gradient(
-      125deg,
-      #10213e 0%,
-      #172b4d 58%,
-      #23456d 100%
-    );
+  padding: 48px 24px;
+  background-image: url('/images/leader.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
   text-align: center;
+  isolation: isolate;
 }
 
-.ttsa-leadership-hero::before,
-.ttsa-leadership-hero::after {
+/* Dark overlay for readable text */
+.ttsa-leadership-hero::before {
   position: absolute;
-  width: 380px;
-  height: 380px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    125deg,
+    rgba(10, 23, 43, 0.90) 0%,
+    rgba(16, 33, 62, 0.76) 55%,
+    rgba(20, 43, 70, 0.58) 100%
+  );
   content: "";
   pointer-events: none;
 }
 
-.ttsa-leadership-hero::before {
-  top: -240px;
-  left: -120px;
-}
-
+/* Decorative circle */
 .ttsa-leadership-hero::after {
+  position: absolute;
   right: -150px;
   bottom: -250px;
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
 }
 
 .ttsa-leadership-hero-inner {
@@ -51,34 +50,32 @@
   z-index: 1;
   display: flex;
   width: 100%;
-  max-width: 950px;
+  max-width: 900px;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
 }
 
 /* EYEBROW */
-
 .ttsa-leadership-eyebrow {
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   color: #f4c95d;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 2px;
-  line-height: 1.7;
+  line-height: 1.5;
   text-align: center;
 }
 
 /* MAIN HEADING */
-
 .ttsa-leadership-hero h1 {
-  margin: 18px 0 22px;
+  margin: 10px 0 12px;
   color: #ffffff;
-  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+  font-size: clamp(2.3rem, 5vw, 4rem);
   font-weight: 850;
-  letter-spacing: -1.8px;
-  line-height: 1.12;
+  letter-spacing: -1.6px;
+  line-height: 1.08;
   text-align: center;
 }
 
@@ -87,28 +84,27 @@
 }
 
 /* DESCRIPTION */
-
 .ttsa-leadership-hero p {
-  max-width: 700px;
-  margin: 0 auto 30px;
-  color: rgba(255, 255, 255, 0.84);
-  font-size: 1.05rem;
-  line-height: 1.9;
+  max-width: 680px;
+  margin: 0 auto 18px;
+  color: rgba(255, 255, 255, 0.90);
+  font-size: 1rem;
+  line-height: 1.65;
   text-align: center;
 }
 
 /* CALL TO ACTION */
-
 .ttsa-leadership-hero-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 13px 22px;
-  border: 1px solid rgba(244, 201, 93, 0.55);
+  gap: 10px;
+  padding: 11px 20px;
+  border: 1px solid rgba(244, 201, 93, 0.65);
   border-radius: 8px;
+  background: rgba(10, 23, 43, 0.22);
   color: #ffffff;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 750;
   text-align: center;
   text-decoration: none;
@@ -121,7 +117,7 @@
 .ttsa-leadership-hero-link:hover {
   transform: translateY(-2px);
   border-color: #f4c95d;
-  background: rgba(244, 201, 93, 0.1);
+  background: rgba(244, 201, 93, 0.14);
 }
 
 .ttsa-leadership-hero-link span {
@@ -135,36 +131,38 @@
 }
 
 /* TABLETS AND MOBILE */
-
 @media (max-width: 600px) {
   .ttsa-leadership-hero {
-    min-height: 390px;
-    padding: 70px 20px;
+    min-height: 300px;
+    padding: 38px 18px;
+    background-position: center;
   }
 
   .ttsa-leadership-eyebrow {
-    font-size: 0.66rem;
-    letter-spacing: 1.4px;
+    font-size: 0.64rem;
+    letter-spacing: 1.2px;
   }
 
   .ttsa-leadership-hero h1 {
-    margin: 16px 0 18px;
-    font-size: clamp(2.15rem, 8vw, 3rem);
-    letter-spacing: -1px;
-    line-height: 1.15;
+    margin: 10px 0 12px;
+    font-size: clamp(2rem, 7.5vw, 2.8rem);
+    letter-spacing: -0.8px;
+    line-height: 1.12;
   }
 
   .ttsa-leadership-hero p {
-    font-size: 0.95rem;
-    line-height: 1.8;
+    margin-bottom: 16px;
+    font-size: 0.91rem;
+    line-height: 1.6;
   }
 
   .ttsa-leadership-hero-link {
-    padding: 12px 18px;
-    font-size: 0.88rem;
+    padding: 10px 16px;
+    font-size: 0.85rem;
   }
 }
 
+/* ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
   .ttsa-leadership-hero-link,
   .ttsa-leadership-hero-link span {

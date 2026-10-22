@@ -91,9 +91,13 @@ export default function Login() {
   return (
     <main className="auth-page">
       <section className="auth-card">
-        <Link to="/" className="auth-brand">
-          TTSA
-        </Link>
+        <Link to="/" className="auth-brand" aria-label="TTSA homepage">
+  <img
+    src="/ttsa-logo.png"
+    alt="Taita Taveta Students Association (TTSA) Logo"
+    className="auth-logo"
+  />
+</Link>
 
         <p className="auth-eyebrow">STUDENT PORTAL</p>
 
